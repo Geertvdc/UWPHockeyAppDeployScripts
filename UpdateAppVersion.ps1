@@ -24,5 +24,4 @@ $currentVersion = [Version]$manifestXml.Package.Identity.Version
 $updatedVersion = [Version]($currentVersion.Major.ToString() + '.' + $currentVersion.Minor + '.' + $currentVersion.Build + '.' + $buildId)
 
 $manifestXml.Package.Identity.Version = [String]$updatedVersion
-#Set-ItemProperty $manifestfile.Fullname -name IsReadOnly -value $false
 $manifestXml.save($manifestfile.FullName)

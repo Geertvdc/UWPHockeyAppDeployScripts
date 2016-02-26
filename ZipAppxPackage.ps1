@@ -11,6 +11,7 @@ function ZipFiles( $zipfilename, $sourcedir )
         $zipfilename, $compressionLevel, $false)
 }
 
-$folderName = Get-ChildItem $dir | Select-Object -first 1
-ZipFiles "$($foldername.FullName).zip" $dir;
-Write-Host "created zip file with name" $folderName.FullName
+$folderName = Get-ChildItem "$dir\AppxPackages\" | Select-Object -first 1
+Write-Host "creating zip of folder $dir\AppxPackages\"
+ZipFiles "$($dir)\$($folderName.Name).zip" "$dir\AppxPackages\";
+Write-Host "created zip file with name $($dir)\$($folderName.Name).zip"

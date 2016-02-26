@@ -19,8 +19,6 @@ $response = Invoke-RestMethod -Method POST -Uri $create_url  -Header @{ "X-Hocke
 $update_url = "https://rink.hockeyapp.net/api/2/apps/$($HockeyAppAppID)/app_versions/$($response.id)"
  
 
-#cd "$($zipFile.Directory.FullName)"
-
 $fileBin = [IO.File]::ReadAllBytes($zipFile)
 $enc = [System.Text.Encoding]::GetEncoding("ISO-8859-1")
 $fileEnc = $enc.GetString($fileBin)
